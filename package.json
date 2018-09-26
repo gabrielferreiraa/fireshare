@@ -2,6 +2,19 @@
   "name": "codeshare",
   "version": "0.1.0",
   "private": true,
+  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/gabrielferreiraa/codeshare.git"
+  },
+  "bugs": {
+    "url": "https://github.com/gabrielferreiraa/codeshare/issues"
+  },
+  "author": {
+    "name": "Gabriel Ferreira",
+    "email": "hi.gabrielferreira@gmail.com",
+    "url": "https://github.com/gabrielferreiraa"
+  },
   "dependencies": {
     "firebase": "^5.5.1",
     "react": "^16.5.2",
