@@ -4,7 +4,7 @@ import { Provider } from 'react-redux';
 import { configureStore } from './redux-flow/stores/configure-store';
 import { BrowserRouter as Router } from 'react-router-dom';
 
-import App from './App';
+import App from 'containers/app';
 import registerServiceWorker from './registerServiceWorker';
 
 const rootElement = document.getElementById('root');

@@ -1,9 +1,9 @@
 import React, { Fragment } from 'react';
 import { Route } from 'react-router-dom';
 
-import Home from '../home';
-import Entry from '../entry';
-import Code from '../code';
+import Home from 'containers/home';
+import Entry from 'containers/entry';
+import Code from 'containers/code';
 
 const App = () => (
     <Fragment>
