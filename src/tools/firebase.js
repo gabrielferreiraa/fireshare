@@ -1,4 +1,4 @@
-export const firebaseConfig = {
+export const config = {
     apiKey: "AIzaSyDTxAouPv1fiTRXTujeqtmI3tOqSJaew2c",
     authDomain: "web-codeshare.firebaseapp.com",
     databaseURL: "https://web-codeshare.firebaseio.com",

@@ -17,7 +17,7 @@ const renderApp = Component => (
             <Router>
                 <Component />
             </Router>
-        </Provider>, 
+        </Provider>,
         rootElement)
 );
 
