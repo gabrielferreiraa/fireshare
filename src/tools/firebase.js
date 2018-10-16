@@ -1,8 +1,6 @@
-export const config = {
-    apiKey: "AIzaSyDTxAouPv1fiTRXTujeqtmI3tOqSJaew2c",
-    authDomain: "web-codeshare.firebaseapp.com",
-    databaseURL: "https://web-codeshare.firebaseio.com",
-    projectId: "web-codeshare",
-    storageBucket: "web-codeshare.appspot.com",
-    messagingSenderId: "809296150443"
+export default {
+    apiKey: "AIzaSyBaE5ksQXzp9l66-0RjSlnXcSELxPcUvhI",
+    authDomain: "dbfireshare.firebaseapp.com",
+    databaseURL: "https://dbfireshare.firebaseio.com",
+    projectId: "dbfireshare"
 };

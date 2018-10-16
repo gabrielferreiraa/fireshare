@@ -2,25 +2,24 @@ import React from 'react';
 import { render } from 'react-dom';
 import { Provider } from 'react-redux';
 import { configureStore } from 'redux-flow/stores/configure-store';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { initApp } from 'tools/init';
 
-import { style } from 'style/default';
+import { HashRouter as Router } from 'react-router-dom';
 import App from 'containers/app';
-import registerServiceWorker from './registerServiceWorker';
 
 const rootElement = document.getElementById('root');
 const store = configureStore();
 
-const renderApp = Component => (
+const renderApp = () => (
     render(
         <Provider store={store}>
             <Router>
-                <Component />
+                <App />
             </Router>
         </Provider>,
-        rootElement)
+        rootElement
+    )
 );
 
-renderApp(App);
-style();
-registerServiceWorker();
+initApp();
+renderApp();
