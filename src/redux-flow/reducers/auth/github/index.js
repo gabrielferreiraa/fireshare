@@ -16,11 +16,13 @@ const handlers = {
     [action.LOGIN_SUCCESS]: (state, action) => ({
         ...state,
         isFetching: false,
+        isAuthenticated: true,
         user: action.user
     }),
     [action.LOGIN_ERROR]: (state, action) => ({
         ...state,
-        isFetching: false
+        isFetching: false,
+        isAuthenticated: false
     })
 };
 
