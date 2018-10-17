@@ -1,6 +1,6 @@
 import { fontFace } from 'style/fontface';
 
-export const global = {
+export default {
     primaryColor: '#2B3B46',
     font: {
         black: 'din-black',
