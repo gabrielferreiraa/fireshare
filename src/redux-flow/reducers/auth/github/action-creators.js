@@ -11,23 +11,21 @@ const success = user => ({
     user
 });
 
-const handleLogin = history => {
-    return dispatch => {
-        dispatch(request());
-        const response = login();
+const handleLogin = history => dispatch => {
+    dispatch(request());
+    const response = login();
 
-        response
-            .then(res => {
-                const user = getRelevantData(res.user);
+    response
+        .then(res => {
+            const user = getRelevantData(res.user);
 
-                dispatch(success(user));
-                dispatch(handleRegister(user));
-                history.push('/entry');
-            })
-            .catch(err => dispatch({
-                type: action.LOGIN_ERROR
-            }))
-    }
+            dispatch(success(user));
+            dispatch(handleRegister(user));
+            history.push('/entry');
+        })
+        .catch(err => dispatch({
+            type: action.LOGIN_ERROR
+        }))
 }
 
 export { handleLogin };

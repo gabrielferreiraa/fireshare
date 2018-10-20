@@ -24,6 +24,7 @@
     "styled-components": "^3.4.9"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "enzyme": "^3.6.0",
     "enzyme-adapter-react-16": "^1.5.0",
     "prop-types": "^15.6.2",
@@ -32,6 +33,7 @@
     "redux": "^4.0.0",
     "redux-actions": "^2.6.1",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.5.3",
     "redux-multi": "^0.1.12",
     "redux-promise": "^0.6.0",
     "redux-thunk": "^2.3.0"
@@ -39,7 +41,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "react-scripts test --coverage --env=jsdom",
+    "test:watch": "yarn test --watch",
     "eject": "react-scripts eject"
   }
 }

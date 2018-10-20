@@ -6,15 +6,15 @@ const initialState = {
 };
 
 const handlers = {
-    [action.REGISTER_REQUEST]: (state, action) => ({
+    [action.REGISTER_REQUEST]: state => ({
         ...state,
         isFetching: true
     }),
-    [action.REGISTER_SUCCESS]: (state, action) => ({
+    [action.REGISTER_SUCCESS]: state => ({
         ...state,
         isFetching: false
     }),
-    [action.REGISTER_ERROR]: (state, action) => ({
+    [action.REGISTER_ERROR]: state => ({
         ...state,
         isFetching: false
     })
