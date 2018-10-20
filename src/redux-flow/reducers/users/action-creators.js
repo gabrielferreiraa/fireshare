@@ -9,13 +9,11 @@ const success = () => ({
     type: action.REGISTER_SUCCESS
 });
 
-const handleRegister = user => {
-    return dispatch => {
-        dispatch(request());
-        const response = register(user);
+const handleRegister = user => dispatch => {
+    dispatch(request());
+    const response = register(user);
 
-        response.then(res => dispatch(success()));
-    }
+    response.then(res => dispatch(success()));
 }
 
 export { handleRegister };

@@ -9,7 +9,7 @@ const initialState = {
 };
 
 const handlers = {
-    [action.LOGIN_REQUEST]: (state, action) => ({
+    [action.LOGIN_REQUEST]: state => ({
         ...state,
         isFetching: true
     }),
@@ -19,7 +19,7 @@ const handlers = {
         isAuthenticated: true,
         user: action.user
     }),
-    [action.LOGIN_ERROR]: (state, action) => ({
+    [action.LOGIN_ERROR]: state => ({
         ...state,
         isFetching: false,
         isAuthenticated: false

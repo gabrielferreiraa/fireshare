@@ -1,7 +1,7 @@
 import { firebase, githubProvider } from 'firebase/config';
 
-const login = () => {
-    return firebase
+const login = () => (
+    firebase
         .auth()
         .signInWithPopup(githubProvider)
         .then(result => result)
@@ -11,7 +11,7 @@ const login = () => {
             var email = error.email;
             var credential = error.credential;
         })
-}
+)
 
 const getRelevantData = user => ({
     name: user.displayName,
