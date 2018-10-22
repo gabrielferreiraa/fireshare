@@ -2,9 +2,10 @@ import React from 'react';
 import global from 'tools/global';
 import Main from 'components/main';
 import LoginProviders from 'components/login-providers';
-import { bindActionCreators } from 'redux'
-import { connect } from 'react-redux'
-import { handleLogin } from 'redux-flow/reducers/auth/github/action-creators'
+import { bindActionCreators } from 'redux';
+import { connect } from 'react-redux';
+import { handleLogin as githubHandleLogin } from 'redux-flow/reducers/auth/github/action-creators';
+import { handleLogin as googleHandleLogin } from 'redux-flow/reducers/auth/google/action-creators';
 import styled from 'styled-components';
 
 const Teste = styled.div`
@@ -42,16 +43,19 @@ const Home = ({ github, ...props }) => {
             </Teste>
 
             <LoginProviders
-                githubHandleLogin={() => props.handleLogin(props.history)}
+                githubHandleLogin={() => props.githubHandleLogin(props.history)}
+                googleHandleLogin={() => props.googleHandleLogin(props.history)}
             />
-                {/* <button onClick={() => props.handleLogin(props.history)}>Sign up with Github</button>
-                <button onClick={() => props.handleLogin(props.history)}>Sign up with Google</button> */}
         </Main>
     )
 };
 
 const mapStateToProps = state => ({
-    github: state.auth.github
+    github: state.auth.github,
+    google: state.auth.google
 })
-const mapDispatchToProps = dispatch => bindActionCreators({ handleLogin }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({
+    githubHandleLogin,
+    googleHandleLogin
+}, dispatch)
 export default connect(mapStateToProps, mapDispatchToProps)(Home)
