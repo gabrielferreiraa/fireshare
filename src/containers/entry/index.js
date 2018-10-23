@@ -6,6 +6,7 @@ import ExistingRoomSection from './existing-room-section';
 import NewRoomSection from './new-room-section';
 import Separator from 'components/separator';
 import Particles from 'components/particles';
+import Back from 'components/back';
 import { connect } from 'react-redux';
 
 const EntryWrapper = styled.div`
@@ -18,6 +19,7 @@ const EntryWrapper = styled.div`
 
 const Entry = ({ user }) => (
 	<Fragment>
+		<Back />
 		<Particles />
 		<Main>
 			<EntryWrapper>
