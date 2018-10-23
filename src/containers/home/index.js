@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import global from 'tools/global';
 import Main from 'components/main';
 import LoginProviders from 'components/login-providers';
@@ -7,8 +7,9 @@ import { connect } from 'react-redux';
 import { handleLogin as githubHandleLogin } from 'redux-flow/reducers/auth/github/action-creators';
 import { handleLogin as googleHandleLogin } from 'redux-flow/reducers/auth/google/action-creators';
 import styled from 'styled-components';
+import Particles from 'components/particles';
 
-const Teste = styled.div`
+const Project = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -17,36 +18,34 @@ const Teste = styled.div`
     padding: 40px;
 `;
 
-const Logo = styled.img`
-
-`;
-
 const ProjectName = styled.h1`
     font-size: 3em;
     font-family: ${global.font.black};
     width: 100%;
     text-align: center;
+    color: #FFF;
 `;
 
 const ProjectSummary = styled.p`
     font-size: 1.4em;
     text-align: center;
+    color: #FFF;
 `;
 
 const Home = ({ github, ...props }) => {
     return (
-        <Main>
-            <Teste>
-                <Logo src={global.project.logo} />
-                <ProjectName>{global.project.name}</ProjectName>
-                <ProjectSummary>{global.project.summary}</ProjectSummary>
-            </Teste>
+        <Fragment>
+            <Particles />
+            <Main>
+                <Project>
+                    <img src={global.project.logo} />
+                    <ProjectName>{global.project.name}</ProjectName>
+                    <ProjectSummary>{global.project.summary}</ProjectSummary>
+                </Project>
 
-            <LoginProviders
-                githubHandleLogin={() => props.githubHandleLogin(props.history)}
-                googleHandleLogin={() => props.googleHandleLogin(props.history)}
-            />
-        </Main>
+                <LoginProviders {...props}/>
+            </Main>
+        </Fragment>
     )
 };
 

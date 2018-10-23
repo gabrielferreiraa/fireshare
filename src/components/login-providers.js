@@ -13,10 +13,10 @@ const StyledLoginProviders = styled.div`
     justify-content: center;
 `;
 
-const LoginProviders = ({ githubHandleLogin, googleHandleLogin }) => (
+const LoginProviders = props => (
     <StyledLoginProviders>
-        <GithubLoginButton onClick={githubHandleLogin}/>
-        <GoogleLoginButton onClick={googleHandleLogin} />
+        <GithubLoginButton onClick={() => props.githubHandleLogin(props.history)}/>
+        <GoogleLoginButton onClick={() => props.googleHandleLogin(props.history)} />
     </StyledLoginProviders>
 );
 

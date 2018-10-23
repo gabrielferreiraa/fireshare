@@ -8,6 +8,8 @@ const Main = styled.main`
     width: calc(100% - 60px);
     height: calc(100vh - 60px);
     padding: 30px;
+    z-index: 1;
+    position: relative;
 `;
 
 export default Main;

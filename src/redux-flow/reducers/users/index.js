@@ -2,7 +2,10 @@ import { handleActions } from 'redux-actions';
 import * as action from './actions';
 
 const initialState = {
-    isFetching: false
+    isFetching: false,
+    data: {
+        name: 'friend'
+    }
 };
 
 const handlers = {
@@ -10,9 +13,10 @@ const handlers = {
         ...state,
         isFetching: true
     }),
-    [action.REGISTER_SUCCESS]: state => ({
+    [action.REGISTER_SUCCESS]: (state, action) => ({
         ...state,
-        isFetching: false
+        isFetching: false,
+        data: action.data
     }),
     [action.REGISTER_ERROR]: state => ({
         ...state,
