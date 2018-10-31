@@ -1,4 +1,6 @@
 import * as action from './actions';
+import axios from 'axios';
+import api from 'tools/api';
 import register from 'firebase/register';
 
 const request = () => ({
@@ -10,13 +12,23 @@ const success = data => ({
     data
 });
 
+const error = () => ({
+    type: action.REGISTER_ERROR
+});
+
 const handleRegister = user => dispatch => {
     dispatch(request());
-    const response = register(user);
 
-    response.then(res => (
-        dispatch(success(user))
-    ));
+    axios({
+        method: 'POST',
+        url: `${api.url}/user`,
+        data: user,
+        headers: {
+            Authorization: user.token
+        }
+    })
+    .then(() => dispatch(success(user)))
+    .catch(() => dispatch(error()));
 }
 
 export { handleRegister };

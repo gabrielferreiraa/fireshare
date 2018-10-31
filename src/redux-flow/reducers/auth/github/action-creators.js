@@ -18,7 +18,7 @@ const handleLogin = (history) => (dispatch) => {
 	response
 		.then((res) => {
 			const user = getRelevantData(res.user);
-			console.log(res.user, user);
+			
 			dispatch(success(user));
 			dispatch(handleRegister(user));
 			history.push('/entry');
