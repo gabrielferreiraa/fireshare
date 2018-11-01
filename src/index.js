@@ -7,18 +7,16 @@ import { initApp } from 'tools/init';
 import { HashRouter as Router } from 'react-router-dom';
 import App from 'containers/app';
 
-const rootElement = document.getElementById('root');
+const rootElement = global.document.getElementById('root');
 const store = configureStore();
 
-const renderApp = () => (
-    render(
-        <Provider store={store}>
-            <Router>
-                <App />
-            </Router>
-        </Provider>,
-        rootElement
-    )
+const renderApp = () => render(
+  <Provider store={store}>
+    <Router>
+      <App />
+    </Router>
+  </Provider>,
+  rootElement,
 );
 
 initApp();

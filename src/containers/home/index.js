@@ -32,22 +32,20 @@ const ProjectSummary = styled.p`
     color: #FFF;
 `;
 
-const Home = ({ github, ...props }) => {
-    return (
-        <Fragment>
-            <Particles />
-            <Main>
-                <Project>
-                    <img src={global.project.logo} />
-                    <ProjectName>{global.project.name}</ProjectName>
-                    <ProjectSummary>{global.project.summary}</ProjectSummary>
-                </Project>
+const Home = ({ github, ...props }) => (
+    <Fragment>
+        <Particles />
+        <Main>
+            <Project>
+                <img src={global.project.logo} />
+                <ProjectName>{global.project.name}</ProjectName>
+                <ProjectSummary>{global.project.summary}</ProjectSummary>
+            </Project>
 
-                <LoginProviders {...props}/>
-            </Main>
-        </Fragment>
-    )
-};
+            <LoginProviders {...props}/>
+        </Main>
+    </Fragment>
+);
 
 const mapStateToProps = state => ({
     github: state.auth.github,

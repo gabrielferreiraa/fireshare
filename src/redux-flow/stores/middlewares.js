@@ -3,11 +3,6 @@ import multi from 'redux-multi';
 import thunk from 'redux-thunk';
 import logger from 'redux-logger';
 
-const middlewares = [
-  thunk,
-  multi,
-  promise,
-  logger
-]
+const middlewares = [thunk, multi, promise, logger];
 
-export default middlewares
+export default middlewares;

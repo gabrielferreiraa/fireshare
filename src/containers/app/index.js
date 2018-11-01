@@ -6,11 +6,11 @@ import Entry from 'containers/entry';
 import Code from 'containers/code';
 
 const App = () => (
-    <Fragment>
-        <Route exact path='/' component={Home} />
-        <Route path='/entry' component={Entry} />
-        <Route path='/code' component={Code} />
-    </Fragment>
+  <Fragment>
+    <Route exact path="/" component={Home} />
+    <Route path="/entry" component={Entry} />
+    <Route path="/code" component={Code} />
+  </Fragment>
 );
 
 export default App;
