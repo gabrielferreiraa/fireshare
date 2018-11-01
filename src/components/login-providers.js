@@ -27,8 +27,7 @@ const LoginProviders = props => (
 
 LoginProviders.propTypes = {
     githubHandleLogin: PropTypes.func.isRequired,
-    googleHandleLogin: PropTypes.func.isRequired,
-    history: PropTypes.isRequired
+    googleHandleLogin: PropTypes.func.isRequired
 };
 
 export default LoginProviders;

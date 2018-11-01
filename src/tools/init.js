@@ -1,7 +1,9 @@
 import { style } from "style/default";
 import registerServiceWorker from "registerServiceWorker";
 
-export const initApp = () => {
+const initApp = () => {
     style();
     registerServiceWorker();
 };
+
+export default initApp;

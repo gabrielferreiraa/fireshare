@@ -5,7 +5,6 @@ import * as actions from "redux-flow/reducers/auth/google/actions";
 describe("Github Auth Reducer", () => {
     const initialState = {
         isFetching: false,
-        isAuthenticated: false,
         token: "",
         user: {}
     };
@@ -46,7 +45,6 @@ describe("Github Auth Reducer", () => {
         expect(request).to.be.deep.equal({
             ...initialState,
             isFetching: false,
-            isAuthenticated: true,
             user
         });
     });
@@ -58,8 +56,7 @@ describe("Github Auth Reducer", () => {
 
         expect(request).to.be.deep.equal({
             ...initialState,
-            isFetching: false,
-            isAuthenticated: false
+            isFetching: false
         });
     });
 });

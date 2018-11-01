@@ -5,6 +5,7 @@ import * as actions from "redux-flow/reducers/users/actions";
 describe("Users Reducer", () => {
     const initialState = {
         isFetching: false,
+        isAuthenticated: false,
         data: {
             name: "friend"
         }
@@ -46,6 +47,7 @@ describe("Users Reducer", () => {
         expect(request).to.be.deep.equal({
             ...initialState,
             isFetching: false,
+            isAuthenticated: true,
             data
         });
     });
@@ -57,7 +59,8 @@ describe("Users Reducer", () => {
 
         expect(request).to.be.deep.equal({
             ...initialState,
-            isFetching: false
+            isFetching: false,
+            isAuthenticated: false
         });
     });
 });

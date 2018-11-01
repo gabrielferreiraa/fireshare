@@ -1,10 +1,9 @@
-import { handleActions } from 'redux-actions';
-import * as action from './actions';
+import { handleActions } from "redux-actions";
+import * as action from "./actions";
 
 const initialState = {
     isFetching: false,
-    isAuthenticated: false,
-    token: '',
+    token: "",
     user: {}
 };
 
@@ -16,13 +15,11 @@ const handlers = {
     [action.LOGIN_SUCCESS]: (state, action) => ({
         ...state,
         isFetching: false,
-        isAuthenticated: true,
         user: action.user
     }),
     [action.LOGIN_ERROR]: state => ({
         ...state,
-        isFetching: false,
-        isAuthenticated: false
+        isFetching: false
     })
 };
 

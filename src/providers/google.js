@@ -15,7 +15,8 @@ const login = () =>
 const getRelevantData = user => ({
     name: user.displayName,
     avatar: user.photoURL,
-    email: user.email
+    email: user.email,
+    token: user.qa
 });
 
 export { login, getRelevantData };

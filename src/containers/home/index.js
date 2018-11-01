@@ -1,13 +1,13 @@
-import React, { Fragment } from 'react';
-import global from 'tools/global';
-import Main from 'components/main';
-import LoginProviders from 'components/login-providers';
-import { bindActionCreators } from 'redux';
-import { connect } from 'react-redux';
-import { handleLogin as githubHandleLogin } from 'redux-flow/reducers/auth/github/action-creators';
-import { handleLogin as googleHandleLogin } from 'redux-flow/reducers/auth/google/action-creators';
-import styled from 'styled-components';
-import Particles from 'components/particles';
+import React, { Fragment } from "react";
+import global from "tools/global";
+import Main from "components/main";
+import LoginProviders from "components/login-providers";
+import { bindActionCreators } from "redux";
+import { connect } from "react-redux";
+import { handleLogin as githubHandleLogin } from "redux-flow/reducers/auth/github/action-creators";
+import { handleLogin as googleHandleLogin } from "redux-flow/reducers/auth/google/action-creators";
+import styled from "styled-components";
+import Particles from "components/particles";
 
 const Project = styled.div`
     display: flex;
@@ -23,13 +23,13 @@ const ProjectName = styled.h1`
     font-family: ${global.font.black};
     width: 100%;
     text-align: center;
-    color: #FFF;
+    color: #fff;
 `;
 
 const ProjectSummary = styled.p`
     font-size: 1.4em;
     text-align: center;
-    color: #FFF;
+    color: #fff;
 `;
 
 const Home = ({ github, ...props }) => (
@@ -42,7 +42,7 @@ const Home = ({ github, ...props }) => (
                 <ProjectSummary>{global.project.summary}</ProjectSummary>
             </Project>
 
-            <LoginProviders {...props}/>
+            <LoginProviders {...props} />
         </Main>
     </Fragment>
 );
@@ -50,9 +50,16 @@ const Home = ({ github, ...props }) => (
 const mapStateToProps = state => ({
     github: state.auth.github,
     google: state.auth.google
-})
-const mapDispatchToProps = dispatch => bindActionCreators({
-    githubHandleLogin,
-    googleHandleLogin
-}, dispatch)
-export default connect(mapStateToProps, mapDispatchToProps)(Home)
+});
+const mapDispatchToProps = dispatch =>
+    bindActionCreators(
+        {
+            githubHandleLogin,
+            googleHandleLogin
+        },
+        dispatch
+    );
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(Home);

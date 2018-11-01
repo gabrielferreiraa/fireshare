@@ -1,0 +1,28 @@
+[debug] [2018-11-01T18:33:34.483Z] ----------------------------------------------------------------------
+[debug] [2018-11-01T18:33:34.485Z] Command:       /usr/bin/node /usr/bin/firebase serve --only functions
+[debug] [2018-11-01T18:33:34.485Z] CLI Version:   5.1.1
+[debug] [2018-11-01T18:33:34.485Z] Platform:      linux
+[debug] [2018-11-01T18:33:34.485Z] Node Version:  v8.12.0
+[debug] [2018-11-01T18:33:34.485Z] Time:          Thu Nov 01 2018 15:33:34 GMT-0300 (-03)
+[debug] [2018-11-01T18:33:34.485Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-01T18:33:34.494Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-01T18:33:34.494Z] > authorizing via signed-in user
+[debug] [2018-11-01T18:33:34.494Z] [iam] checking project dbfireshare for permissions ["firebase.projects.get"]
+[debug] [2018-11-01T18:33:34.496Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/dbfireshare:testIamPermissions  
+
+[debug] [2018-11-01T18:33:35.592Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-01T18:33:35.596Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/dbfireshare  
+ 
+[debug] [2018-11-01T18:33:36.585Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/gabriel/Playgd/fireshare'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-01T18:33:37.246Z] Fetching environment
+[debug] [2018-11-01T18:33:37.254Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/350612127715:getServerAppConfig  
+ 
+[debug] [2018-11-01T18:33:37.682Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-01T18:33:37.683Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-01T18:33:39.218Z] Parsing function triggers
+[info] ✔  functions: api: http://localhost:5000/dbfireshare/us-central1/api
