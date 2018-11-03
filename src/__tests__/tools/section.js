@@ -1,4 +1,3 @@
-import global from 'tools/global';
 import { generateHash } from 'tools/section';
 import { expect } from 'chai';
 
