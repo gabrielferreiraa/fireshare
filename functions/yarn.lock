@@ -851,6 +851,13 @@ expand-brackets@^2.1.4:
     snapdragon "^0.8.1"
     to-regex "^3.0.1"
 
+express-validator@^5.3.0:
+  version "5.3.0"
+  resolved "https://registry.yarnpkg.com/express-validator/-/express-validator-5.3.0.tgz#18a4e4a6e6410e3b9d492fb4ffcb4556fec51806"
+  dependencies:
+    lodash "^4.17.10"
+    validator "^10.4.0"
+
 express@^4.16.2, express@^4.16.4:
   version "4.16.4"
   resolved "https://registry.yarnpkg.com/express/-/express-4.16.4.tgz#fddef61926109e24c515ea97fd2f1bdbf62df12e"
@@ -2567,6 +2574,10 @@ utils-merge@1.0.1:
 uuid@^3.3.2:
   version "3.3.2"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.3.2.tgz#1b4af4955eb3077c501c23872fc6513811587131"
+
+validator@^10.4.0:
+  version "10.8.0"
+  resolved "https://registry.yarnpkg.com/validator/-/validator-10.8.0.tgz#8acb15a5c39411cbc8ef2be0c98c2514da4410a7"
 
 vary@^1, vary@~1.1.2:
   version "1.1.2"

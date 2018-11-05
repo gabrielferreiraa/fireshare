@@ -12,6 +12,7 @@
     "body-parser": "^1.18.3",
     "cors": "^2.8.4",
     "express": "^4.16.4",
+    "express-validator": "^5.3.0",
     "firebase-admin": "~6.0.0",
     "firebase-functions": "^2.0.3"
   },
