@@ -1,12 +1,16 @@
 import { expect } from "chai";
-import middlewares from "redux-flow/stores/middlewares";
+import configureMiddleware from "redux-flow/stores/middlewares";
 
 import promise from "redux-promise";
 import multi from "redux-multi";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
+import { createMemoryHistory } from "history";
 
 describe("middleares redux flow stores", () => {
+    const history = createMemoryHistory();
+    const middlewares = configureMiddleware(history);
+
     test("should has value", () => {
         expect(middlewares).to.not.be.empty;
     });
@@ -15,8 +19,8 @@ describe("middleares redux flow stores", () => {
         expect(middlewares).to.be.an("array");
     });
 
-    test("should be have 4 middlewares", () => {
-        expect(middlewares).to.have.lengthOf(4);
+    test("should be have 5 middlewares", () => {
+        expect(middlewares).to.have.lengthOf(5);
     });
 
     test("should be have `promise` middleware", () => {

@@ -16,12 +16,8 @@ const StyledLoginProviders = styled.div`
 
 const LoginProviders = props => (
     <StyledLoginProviders>
-        <GithubLoginButton
-            onClick={() => props.githubHandleLogin(props.history)}
-        />
-        <GoogleLoginButton
-            onClick={() => props.googleHandleLogin(props.history)}
-        />
+        <GithubLoginButton onClick={props.githubHandleLogin} />
+        <GoogleLoginButton onClick={props.googleHandleLogin} />
     </StyledLoginProviders>
 );
 

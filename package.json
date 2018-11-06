@@ -17,6 +17,7 @@
     },
     "dependencies": {
         "axios": "^0.18.0",
+        "connected-react-router": "^5.0.1",
         "firebase": "^5.5.1",
         "react": "^16.5.2",
         "react-dom": "^16.5.2",
@@ -46,7 +47,7 @@
     "scripts": {
         "start": "react-scripts start",
         "build": "react-scripts build",
-        "test": "react-scripts test --coverage --env=jsdom",
+        "test": "react-scripts test --env=jsdom",
         "test:watch": "yarn test --watch",
         "eject": "react-scripts eject"
     }

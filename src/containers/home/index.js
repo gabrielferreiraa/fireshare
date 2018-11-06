@@ -32,7 +32,7 @@ const ProjectSummary = styled.p`
     color: #fff;
 `;
 
-const Home = ({ github, ...props }) => (
+const Home = props => (
     <Fragment>
         <Particles />
         <Main>
@@ -42,7 +42,10 @@ const Home = ({ github, ...props }) => (
                 <ProjectSummary>{global.project.summary}</ProjectSummary>
             </Project>
 
-            <LoginProviders {...props} />
+            <LoginProviders
+                githubHandleLogin={props.githubHandleLogin}
+                googleHandleLogin={props.googleHandleLogin}
+            />
         </Main>
     </Fragment>
 );

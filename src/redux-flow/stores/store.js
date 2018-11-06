@@ -1,22 +1,32 @@
-import { applyMiddleware, createStore } from "redux";
+import { applyMiddleware, compose, createStore } from "redux";
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import { DEV_TOOLS } from "tools/constants";
-import rootReducers from "redux-flow/reducers/root-reducers";
-import middlewares from "redux-flow/stores/middlewares";
+import createRootReducer from "redux-flow/reducers/root-reducers";
+import configureMiddleware from "./middlewares";
 
 const persistConfig = {
     key: "root",
     storage
 };
 
-const persistedReducer = persistReducer(persistConfig, rootReducers);
+export default history => {
+    const middlewares = configureMiddleware(history);
 
-const store = applyMiddleware(...middlewares)(createStore)(
-    persistedReducer,
-    DEV_TOOLS
-);
+    const persistedReducer = persistReducer(
+        persistConfig,
+        createRootReducer(history)
+    );
 
-const persistor = persistStore(store);
+    const store = createStore(
+        persistedReducer,
+        compose(
+            applyMiddleware(...middlewares),
+            DEV_TOOLS
+        )
+    );
 
-export { store, persistor };
+    const persistor = persistStore(store);
+
+    return { store, persistor };
+};

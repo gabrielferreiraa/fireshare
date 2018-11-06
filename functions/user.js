@@ -1,22 +1,22 @@
-const { check, validationResult } = require('express-validator/check');
-const { db } = require('./init');
+const { check, validationResult } = require("express-validator/check");
+const { db } = require("./init");
 
 const user = (req, res) => {
-	const errors = validationResult(req);
-	if (!errors.isEmpty()) {
-		return res.status(422).json({ errors: errors.array() });
-	}
+    const errors = validationResult(req);
+    if (!errors.isEmpty()) {
+        return res.status(422).json({ errors: errors.array() });
+    }
 
-	const user = req.body;
+    const user = req.body;
 
-	return db
-		.collection('users')
-		.doc(user.email)
-		.set(user)
-		.then(resp => res.status(200).send(resp))
-		.catch(err => res.status(400).send(err));
+    return db
+        .collection("users")
+        .doc(user.email)
+        .set(user)
+        .then(resp => res.status(200).send(resp))
+        .catch(err => res.status(400).send(err));
 };
 
-const userValidators = [check('name').exists(), check('email').isEmail()];
+const userValidators = [check("name").exists(), check("email").isEmail()];
 
 module.exports = { user, userValidators };
