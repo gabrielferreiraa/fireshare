@@ -1,0 +1,32 @@
+[debug] [2018-11-06T16:16:55.662Z] ----------------------------------------------------------------------
+[debug] [2018-11-06T16:16:55.664Z] Command:       /usr/bin/node /usr/bin/firebase serve --only functions
+[debug] [2018-11-06T16:16:55.665Z] CLI Version:   5.1.1
+[debug] [2018-11-06T16:16:55.665Z] Platform:      linux
+[debug] [2018-11-06T16:16:55.665Z] Node Version:  v8.12.0
+[debug] [2018-11-06T16:16:55.665Z] Time:          Tue Nov 06 2018 14:16:55 GMT-0200 (-02)
+[debug] [2018-11-06T16:16:55.665Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2018-11-06T16:16:55.674Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2018-11-06T16:16:55.674Z] > authorizing via signed-in user
+[debug] [2018-11-06T16:16:55.674Z] [iam] checking project dbfireshare for permissions ["firebase.projects.get"]
+[debug] [2018-11-06T16:16:55.675Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2018-11-06T16:16:55.676Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2018-11-06T16:16:55.992Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T16:16:55.996Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/dbfireshare:testIamPermissions  
+
+[debug] [2018-11-06T16:16:57.170Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T16:16:57.172Z] >>> HTTP REQUEST GET https://cloudresourcemanager.googleapis.com/v1/projects/dbfireshare  
+ 
+[debug] [2018-11-06T16:16:58.130Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Serving from '/home/gabriel/Playgd/fireshare'...
+[info] 
+[info] i  functions: Preparing to emulate functions.
+[debug] [2018-11-06T16:16:59.345Z] Fetching environment
+[debug] [2018-11-06T16:16:59.351Z] >>> HTTP REQUEST GET https://mobilesdk-pa.googleapis.com/v1/projects/350612127715:getServerAppConfig  
+ 
+[debug] [2018-11-06T16:17:00.727Z] <<< HTTP RESPONSE 200
+[debug] [2018-11-06T16:17:00.728Z] Starting @google-cloud/functions-emulator
+[debug] [2018-11-06T16:17:02.260Z] Parsing function triggers
+[info] ✔  functions: api: http://localhost:5000/dbfireshare/us-central1/api

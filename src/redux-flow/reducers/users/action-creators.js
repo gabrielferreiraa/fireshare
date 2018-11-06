@@ -1,5 +1,5 @@
-import axios from "axios";
 import api from "tools/api";
+import http from "tools/http-wrapper";
 import * as action from "./actions";
 
 const request = () => ({
@@ -18,13 +18,11 @@ const error = () => ({
 const handleRegister = user => dispatch => {
     dispatch(request());
 
-    return axios({
+    return http({
         method: "POST",
         url: `${api.url}/user`,
         data: user,
-        headers: {
-            Authorization: user.token
-        }
+        token: user.token
     })
         .then(() => dispatch(success(user)))
         .catch(() => dispatch(error()));

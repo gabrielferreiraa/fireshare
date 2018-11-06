@@ -23,7 +23,7 @@ const handleLogin = () => dispatch => {
             dispatch(success(user));
             dispatch(handleRegister(user)).then(() => dispatch(push("/entry")));
         })
-        .catch(err =>
+        .catch(() =>
             dispatch({
                 type: action.LOGIN_ERROR
             })
