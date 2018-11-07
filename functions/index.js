@@ -17,6 +17,6 @@ main.use(bodyParser.json());
 main.use(bodyParser.urlencoded({ extended: false }));
 
 app.post("/user", requireAuth, userValidators, (req, res) => user(req, res));
-app.post("/room", requireAuth, roomValidators, (req, res) => room(req, res));
+app.post("/room", roomValidators, (req, res) => room(req, res));
 
 exports.api = https.onRequest(main);
